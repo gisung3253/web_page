@@ -116,14 +116,14 @@ URL은 세 가지 주요 부분으로 구성된다:
 - HTTP 요청 메서드는 클라이언트가 서버에게 특정 동작을 수행하도록 요청하는 방법을 정의한다.
 
 ### GET 요청 예시
-GET / HTTP/1.1 Host: www.facebook.com ...
+```GET / HTTP/1.1 Host: www.facebook.com ...```
 - GET은 무언가를 검색하려는 메서드이다.
 - `/`는 기본 페이지 또는 홈페이지를 나타낸다.
 - `HTTP/1.1`은 사용하고자 하는 HTTP 버전을 나타낸다.
 - `Host: www.facebook.com`은 서버가 관리하는 여러 웹사이트 중에서 반환할 특정 웹사이트를 지정한다.
 
 ## 서버 응답
-HTTP/1.1 200 OK Content-Type: text/html ...
+```HTTP/1.1 200 OK Content-Type: text/html ...```
 - HTTP 헤더와 콘텐츠로 구성된다.
 - 200은 요청이 성공적으로 처리되었음을 나타내는 많은 HTTP 상태 코드 중 하나이다.
 
