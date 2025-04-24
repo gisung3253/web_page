@@ -19,6 +19,7 @@
 - 요소는 콘텐츠와 마크업(시작 태그와 종료 태그) 모두로 구성된다.
 - 일부 요소는 정의상 비어 있다. 예를 들어 이미지를 페이지에 추가하는 데 사용되는 img 요소가 이에 해당한다.
 
+
 ## 기본 문서 구조(Basic Document Structure)
 ```html
 <!DOCTYPE html>
@@ -32,6 +33,7 @@
 </body>
 </html>
 ```
+
 1. **문서 유형 선언(DOCTYPE)**: `<!DOCTYPE html>`
    - 이 문서를 HTML5 문서로 식별한다
 
@@ -50,6 +52,7 @@
 6. **본문(body) 요소**: `<body>Page content goes here.</body>`
    - 브라우저 창에 표시될 정보를 포함한다
 
+
 ## 텍스트 요소 식별하기(Identify Text Elements)
 
 - HTML의 목적은 콘텐츠에 의미와 구조를 추가하는 것이다.
@@ -61,6 +64,7 @@
 - 이것을 개요(outline)로 생각할 수 있다 (기술적인 이름은 DOM, Document Object Model이다).
 
 ![문서 객체 모델(DOM) 구조](images/dom.png)
+
 
 ## 블록 요소와 인라인 요소(Block and inline elements)
 
@@ -94,6 +98,7 @@
 <p>1005 Gravenstein Highway North<br>Sebastopol, CA 95472</p>
 ```
 
+
 ## HTML 속성(Attributes)
 
 - 속성은 요소를 명확히 하거나 수정하는 지시사항이다.
@@ -112,3 +117,114 @@
 ```
 ![속성의 구조](images/attributes.png)
 
+
+## HTML 문서 기본 구조 요약
+
+HTML 문서는 다음과 같은 기본 구조 요소로 구성된다:
+
+| 요소 | 설명 |
+|------|------|
+| html | 모든 요소를 포함하는 루트 요소 |
+| head | 문서에 대한 정보를 포함하는 영역 |
+| title | 페이지 제목을 정의 |
+| meta | 문서에 대한 메타데이터 제공 |
+| body | 브라우저에 표시될 모든 콘텐츠를 포함하는 영역 |
+
+
+## 단락 요소(Paragraphs)
+
+- 단락은 텍스트 문서의 가장 기본적인 요소이다.
+- 단락은 텍스트, 이미지 및 기타 인라인 요소를 포함할 수 있지만, 제목, 목록, 섹션 요소 또는 기본적으로 블록으로 표시되는 요소는 포함할 수 없다.
+
+```html
+<p>Serif 서체는 글자 획의 끝에 작은 장식이 있다. 일반적으로 serif 글꼴은 많은 양의 텍스트를 읽기 쉽게 만든다.</p>
+
+<p>Sans-serif 서체는 serif 장식이 없으며, 끝 부분이 사각형이다. Helvetica와 Arial은 sans-serif 글꼴의 예이다. 일반적으로 sans-serif 글꼴은 더 세련되고 현대적으로 보인다.</p>
+```
+
+> **참고**: 문서의 모든 텍스트에는 요소를 할당해야 한다. 다시 말해, 모든 텍스트는 어떤 형태의 요소로 감싸야 한다. 태그 내에 포함되지 않은 텍스트는 "naked" 또는 "anonymous" 텍스트라고 하며, 문서가 유효하지 않게 된다.
+
+
+## 제목 요소(Headings)
+
+- 제목은 h1부터 h6까지 6단계로 구분된다.
+- 브라우저는 제목을 사용하여 페이지의 문서 개요를 생성한다.
+- 스크린 리더와 같은 보조 기기는 문서 개요를 사용하여 사용자가 페이지를 빠르게 스캔하고 탐색할 수 있도록 도와준다. 또한 검색 엔진은 알고리즘의 일부로 제목 수준을 확인한다.
+- 가장 좋은 방법은 수준 1 제목(h1)으로 시작하여 순서대로 내려가면서 논리적인 문서 구조와 개요를 생성하는 것이다.
+
+
+## 목록 요소(Lists)
+
+HTML은 세 가지 유형의 목록을 마크업하기 위한 요소를 제공한다:
+
+- **순서 없는 목록(Unordered lists)**: 특별한 순서 없이 나타나는 항목의 모음이다.
+- **순서 있는 목록(Ordered lists)**: 항목의 순서가 중요한 목록이다.
+- **설명 목록(Description lists)**: 용어와 정의를 포함한 이름과 값 쌍으로 구성된 목록이다.
+
+### 순서 없는 목록(Unordered Lists)
+
+- 순서 없는 목록은 예시, 이름, 구성 요소, 생각 또는 옵션의 목록에 적합하다. 대부분의 목록이 이 범주에 속한다.
+- 기본적으로 브라우저는 각 목록 항목 앞에 글머리 기호(bullet)를 표시하지만, 스타일시트를 통해 변경할 수 있다.
+
+```html
+<ul>
+  <li><a href="">Serif</a></li>
+  <li><a href="">Sans-serif</a></li>
+  <li><a href="">Script</a></li>
+  <li><a href="">Display</a></li>
+  <li><a href="">Dingbats</a></li>
+</ul>
+```
+
+> **참고**: 순서 없는 목록(`ul` 태그) 내에는 오직 목록 항목만 허용된다. 다른 요소나 태그가 없는 텍스트는 포함할 수 없다. 하지만 목록 항목(`li`) 내에는 모든 타입의 흐름 요소를 포함할 수 있다.
+
+### 순서 있는 목록(Ordered Lists)
+
+- 순서 있는 목록은 단계별 지침이나 운전 방향과 같이 특정 순서로 발생하는 항목에 적합하다.
+- 브라우저는 순서 있는 목록 항목 앞에 자동으로 번호를 삽입하므로, 소스 문서에서 직접 번호를 매길 필요가 없다.
+
+```html
+<ol>
+  <li>Gutenburg develops moveable type (1450s)</li>
+  <li>Linotype is introduced (1890s)</li>
+  <li>Photocomposition catches on (1950s)</li>
+  <li>Type goes digital (1980s)</li>
+</ol>
+```
+
+### 설명 목록(Description Lists)
+
+- 설명 목록은 용어와 각 용어에 대한 설명으로 구성된 목록이다.
+- `dl` 태그는 설명 목록을 정의하고, `dt` 태그는 용어(이름)를 정의하며, `dd` 태그는 각 용어에 대한 설명을 제공한다.
+- `dt`는 "Definition Term"(정의 용어)의 약자이고, `dd`는 "Description Details"(설명 세부사항)의 약자이다.
+
+```html
+<dl>
+  <dt>Sashimi</dt>
+  <dd>Sliced raw fish that is served with condiments such as shredded daikon radish or ginger root, wasabi and soy sauce</dd>
+  <dt>Scale</dt>
+  <dd>A device used to accurately measure the weight of ingredients</dd>
+  <dd>A technique by which the scales are removed from the skin of a fish</dd>
+  <dt>Scamorze</dt>
+  <dt>Scamorzo</dt>
+  <dd>An Italian cheese usually made from whole cow's milk (although it was traditionally made from buffalo milk)</dd>
+</dl>
+```
+
+
+## 문서 유효성 검사(Validating Your Documents)
+
+- 문서의 유효성을 검사한다는 것은 사용 중인 HTML 버전의 규칙을 제대로 따랐는지 마크업을 확인하는 것이다.
+- 오류가 없는 문서는 "유효한(valid)" 문서라고 한다.
+- 특히 전문적인 사이트의 경우 문서의 유효성을 검사하는 것이 강력히 권장된다.
+- 유효한 문서는 다양한 브라우저에서 더 일관되게 표시되고, 더 빠르게 로드되며, 접근성이 더 높다.
+
+### 유효성 검사 중요 사항
+
+- 문서의 모든 텍스트에는 요소를 할당해야 한다. 즉, 모든 텍스트는 어떤 형태의 요소로든 감싸져 있어야 한다.
+- 태그 내에 포함되지 않은 텍스트는 "naked" 또는 "anonymous" 텍스트라고 하며, 이로 인해 문서가 유효하지 않게 된다.
+
+### 온라인 유효성 검사 도구
+
+- W3C는 validator.w3.org에서 무료 온라인 유효성 검사기를 제공한다.
+- HTML5 문서의 경우 html5.validator.nu에 있는 온라인 유효성 검사기를 사용한다.
